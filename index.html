@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KASUR BUSA</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      /* style untuk bagian banner */
+      .banner {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 400px;
+      }
+
+      .footer {
+        margin-top: 20px;
+        width: 100%;
+        padding: 15px;
+        background-color: rgb(35, 35, 35);
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- bagian toolbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">KASUR BUSA</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="me-auto"></div>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/menu_product.html">PRODUK</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/menu_feature.html">FITUR</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/menu_about.html">TENTANG KAMI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/menu_contact.html">KONTAK</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- bagian banner -->
+    <div class="container">
+      <div
+        class="banner"
+        style="
+          background-image: url('data:image/png;base64,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');
+        "
+      ></div>
+    </div>
+
+    <!-- bagian content -->
+    <div class="container">
+      <p>
+        Royal Foam merupakan kasur busa pertama dan satu-satunya di Indonesia yang diproduksi dengan teknologi Sanitized®. Dengan pengawasan dan lisensi para ahli mikroba dari Swiss, kasur busa Royal Foam memberi jaminan bahwa produk ini higienis, anti bakteri, anti jamur dan bebas dari tungau. Teknologi Sanitized® ini juga menjaga kasur busa Royal Foam bebas dari bau apek.
+
+
+
+Royal Foam diproduksi menggunakan busa tanpa filler, sehingga lebih ramah lingkungan. Keunggulan lainnya, stuktur busa didesain secara open cell structure. Sistem ini menjadikan kasur busa royal memiliki sirkulasi udara yang baik sehingga nyaman saat digunakan.
+
+Keistimewaan yang bisa didapatkan dengan membeli produk Royal Foam adalah jaminan garansi dari 5 tahun hingga seumur hidup. Hal ini membuktikan bahwa Royal Foam sangat memperhatikan kualitas produknya.
+      </p>
+    </div>
+
+    <!-- bagian content produk -->
+    <div class="container">
+      <div class="row">
+        <!-- bagian list produk -->
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem">
+            <img
+              src="https://lirp.cdn-website.com/db897a20/dms3rep/multi/opt/royal+exclusive+imperial%28rev2%29-396w.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">ROYAL EXCLUSIVE EMPERIAL</h5>
+              <p class="card-text">
+                Dengan teknologi Ultracel, membuatnya berbeda dengan jenis bahan Latex, karena Ultracel tidak getas jika terkena sinar matahari langsung, tidak berbau, tidak berubah bentuk, serta memiliki sifat fire retardant/tidak menjalar api apabila terbakar.
+
+
+
+Spesifikasi:
+
+-        Ketebalan Kasur 24cm
+
+-        Garansi Seumur Hidup
+
+-        Kain Knitted
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem">
+            <img
+              src="https://lirp.cdn-website.com/db897a20/dms3rep/multi/opt/royal+pioneer+highlight-396w.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">PIONNER</h5>
+              <p class="card-text">
+                Kasur Pioneer by Royal Foam dengan bahan busa berkualitas tinggi/kenyal, yang membuat kasur busa ini jadi semakin nyaman digunakan dan membuat kualitas tidur Anda meningkat. Dengan premium jacquard fabric sebagai penutupnya, istirahat Anda menjadi sempurna.
+
+Spesifikasi:
+
+-        Ketebalan Kasur 15 cm
+
+-        Garansi 10 tahun
+
+-        Kain Katun Printing
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem">
+            <img
+              src="https://lirp.cdn-website.com/db897a20/dms3rep/multi/opt/Royale+samping-01%28rev%29-640w.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">ROYALE</h5>
+              <p class="card-text">
+                Royale adalah kasur busa yang dikemas dengan teknologi vacuum dan roll menjadikan dimensi lebih kecil dan praktis untuk dibawa yang kemudian akan mengembang menjadi ukuran kasur normal saat kemasan dibuka.
+
+                Kasur Royale dengan busa kepadatan tinggi sehingga anti kempes dan mempunyai tingkat kenyamanan menyerupai latex.
+
+Spesifikasi:
+
+-        Ketebalan Kasur 20cm
+
+-        Garansi 20 tahun
+
+-        Kain Knitted
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem">
+            <img
+             
+
+    <div class="footer">
+<div></div>
+
+
+    </div>
+      
+    </div>
+    <div class="footer">
+      <div></div>
+    </div>
+
+      <div>Copyright @ROYALFOAM</div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KASUR BUSA</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      /* style untuk bagian banner */
+      .banner {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 400px;
+      }
+
+      .footer {
+        margin-top: 20px;
+        width: 100%;
+        padding: 15px;
+        background-color: rgb(35, 35, 35);
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- bagian toolbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">KASUR BUSA</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="me-auto"></div>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/menu_product.html"
+                >PRODUK</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/menu_feature.html">FITUR</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/menu_about.html">TENTANG KAMI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/menu_contact.html">KONTAK</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-2">
+      <h1>Tentang Kami</h1>
+      <p>
+        Royal Corporation foam production facilities come fully equipped with top-of-the-line high-pressure continuous polyurethane foam machines, churning out regular and finer cell structure polyurethane foam with uniform hardness and density distribution consistently and rapidly — More foam for less time.
+ 
+
+        International standards have come to be defined by this technology, and Royal is at the forefront of pioneering more efficient processing solutions for highly-qualified products. To streamline a robust production process, Royal's plants implement a flow that minimises clutter and maximises efficiency.
+      </p>
+
+     
+    </div>
+
+    <div class="footer">
+      <div>Copyright @ROYALFOAM</div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      /* style untuk bagian banner */
+      .banner {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 400px;
+      }
+
+      .footer {
+        margin-top: 20px;
+        width: 100%;
+        padding: 15px;
+        background-color: rgb(35, 35, 35);
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- bagian toolbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">KASUR BUSA</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="me-auto"></div>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/menu_product.html"
+                >PRODUK</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/menu_feature.html">FITUR</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/menu_about.html">TENTANG KAMI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/menu_contact.html">KONTAK</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- bagian content produk -->
+    <div class="container mt-3">
+      <!-- list 1 -->
+      <div class="row mb-3">
+        <!-- bagian list produk -->
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem">
+            <img
+              src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//89/MTA-22182280/royal_foam_kasur_busa_royal_foam_pediccare_full01_gs63kgr2.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">ROYAL PEDIC CARE</h5>
+              Menjaga tidur tetap nyaman dan sehat dengan perpaduan teknologi Ultracel & High Density Foam. Komposisi ini menjadikan Royal Pedic Care tidak getas jika terkena sinar matahari langsung, tidak berbau, serta tidak akan berubah bentuk ataupun kempes.
+
+
+
+              Spesifikasi:
+              
+              -        Ketebalan Kasur 27 cm
+              
+              -        Garansi 20 tahun
+              
+              -        Kain Knitted
+              
+              
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem">
+            <img
+              src="https://lirp.cdn-website.com/db897a20/dms3rep/multi/opt/Enduroweb1-640w.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">ENDURO</h5>
+              <p class="card-text">
+                Kasur busa dengan packaging unik, Royal Enduro juga menggunakan High Density Foam sebagai material utama. Meskipun tingkat kepadatannya tinggi, Royal Enduro tetap empuk & nyaman saat digunakan.
+
+
+
+Royal Enduro juga dilengkapi dengan kain ritsleting yang modis dan modern.
+
+
+
+Spesifikasi:
+
+-        Ketebalan Kasur 15 cm
+
+-        Garansi 20 tahun
+
+-        Kain Knitted
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem">
+            <img
+              src="https://cf.shopee.co.id/file/2d58b64fcc49417a62e24de565b15998"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">MARATHON</h5>
+              <p class="card-text">
+                LG Marathon dengan bahan high density foam/kepadatan busa yang tinggi menjadikannya kasur busa yang nyaman dan awet ketika digunakan dalam jangka panjang.
+
+Spesifikasi:
+
+-        Ketebalan Kasur 15cm dan 20cm
+
+-        Garansi 20 tahun
+
+-        Cotton Ritsleting
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+       
+    <div class="footer">
+      <div>Copyright @ROYALFOAM</div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
